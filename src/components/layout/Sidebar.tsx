@@ -12,20 +12,23 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="w-64 bg-gray-100 min-h-screen border-r">
-      <div className="p-4">
+    <div className="w-58 min-h-screen border-r" style={{ background: '#C4C4C4' }}>
+      <div className="p-7">
         <nav className="space-y-2">
           {menuItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               className={cn(
-                "flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors",
+                "flex items-center space-x-0 px-4 py-3 rounded-lg transition-colors relative",
                 location.pathname === item.path
-                  ? "bg-blue-100 text-blue-700 font-medium"
+                  ? "text-black-00 font-medium"
                   : "text-gray-700 hover:bg-gray-200"
               )}
             >
+              {location.pathname === item.path && (
+                <span className="absolute -left-2 font-bold text-lg">{'>'}</span>
+              )}
               <img src={item.icon} alt={item.label} className="w-6 h-6" />
               <span>{item.label}</span>
             </Link>

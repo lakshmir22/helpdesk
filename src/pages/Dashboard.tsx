@@ -24,9 +24,9 @@ const Dashboard = () => {
   const getPageTitle = () => {
     switch (userRole) {
       case 'technical':
-        return 'Technical Support - Dashboard';
+        return ' Dashboard';
       case 'admin':
-        return 'Admin - Dashboard';
+        return ' Dashboard';
       default:
         return 'Dashboard';
     }
@@ -121,4 +121,35 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export const UserDashboard = () => {
+  const stats = [
+    { title: 'Total Tickets', count: 12, bg: '#4f8ffb', text: 'black' },
+    { title: 'Total Solved', count: 8, bg: '#1aff6b', text: 'black' },
+    { title: 'Total Awaiting Approval', count: 2, bg: '#ff6b6b', text: 'black' },
+    { title: 'Total in Progress', count: 2, bg: '#fff86b', text: 'black' },
+  ];
+
+  return (
+    <div className="w-full h-full bg-transparent px-0 pt-0" style={{ fontFamily: 'serif' }}>
+      <h1 className="text-[2rem] font-bold mb-4 mt-0 ml-0 pl-0">Dashboard</h1>
+      <div className="flex gap-6 mb-6 pl-12">
+        {stats.map((stat, index) => (
+          <div
+            key={index}
+            className="rounded-xl flex flex-col items-center justify-center p-4"
+            style={{
+              background: stat.bg,
+              color: stat.text,
+              width: 200.25,
+              height: 220.07,
+              boxShadow: '6px 8px 0px 0px #D3D3D3',
+            }}
+          >
+            <div className="text-xl font-medium mb-1">{stat.title}</div>
+            <div className="text-[64px] font-light leading-none">{stat.count}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

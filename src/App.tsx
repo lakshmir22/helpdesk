@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,7 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import ForgotPassword from "./pages/auth/ForgotPassword";
-import Dashboard from "./pages/Dashboard";
+import Dashboard, { UserDashboard } from "./pages/Dashboard";
 import MyTickets from "./pages/MyTickets";
 import NewTicket from "./pages/NewTicket";
 import Profile from "./pages/Profile";
@@ -21,6 +20,7 @@ import AdminSettings from "./pages/admin/AdminSettings";
 import AdminUserLog from "./pages/admin/AdminUserLog";
 import AdminProfile from "./pages/admin/AdminProfile";
 import NotFound from "./pages/NotFound";
+import OperationMyTickets from "./pages/OperationMyTickets";
 
 const queryClient = new QueryClient();
 
@@ -43,9 +43,17 @@ const App = () => (
               <Layout />
             </ProtectedRoute>
           }>
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="dashboard" element={
+              localStorage.getItem('userRole') === 'user'
+                ? <UserDashboard />
+                : (["operation", "admin", "technical"].includes(localStorage.getItem('userRole') || ""))
+                  ? <AdminDashboard />
+                  : <Dashboard />
+            } />
             <Route path="ticket-approval" element={<TicketApproval />} />
-            <Route path="my-tickets" element={<MyTickets />} />
+            <Route path="my-tickets" element={
+              localStorage.getItem('userRole') === 'operation' ? <OperationMyTickets /> : <MyTickets />
+            } />
             <Route path="new-ticket" element={<NewTicket />} />
             <Route path="performance" element={<Performance />} />
             <Route path="profile" element={<Profile />} />

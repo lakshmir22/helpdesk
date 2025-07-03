@@ -1,96 +1,82 @@
-
 import React, { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+
+const logEntries = [
+  {
+    no: 1,
+    signInTime: '130821 / 0800',
+    staffId: 'XL000001',
+    department: 'OT',
+    activity: 'Create Team',
+    signOutTime: '130821 / 0815',
+  },
+  {
+    no: 2,
+    signInTime: '130821 / 0805',
+    staffId: '',
+    department: '',
+    activity: '',
+    signOutTime: '130821 / 0810',
+  },
+  { no: 3, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
+  { no: 4, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
+  { no: 5, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
+];
 
 const AdminUserLog = () => {
   const [entriesPerPage, setEntriesPerPage] = useState(10);
 
-  const logEntries = [
-    {
-      no: 1,
-      signInTime: '130821 / 0800',
-      staffId: 'XL000001',
-      department: 'OT',
-      activity: 'Create Team',
-      signOutTime: '130821 / 0815'
-    },
-    {
-      no: 2,
-      signInTime: '130821 / 0805',
-      staffId: '',
-      department: '',
-      activity: '',
-      signOutTime: '130821 / 0810'
-    },
-    { no: 3, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
-    { no: 4, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
-    { no: 5, signInTime: '', staffId: '', department: '', activity: '', signOutTime: '' },
-  ];
-
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800">User Log History</h1>
-      </div>
-
-      <Card>
-        <CardContent className="p-6">
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Show:</span>
-              <select 
-                value={entriesPerPage}
-                onChange={(e) => setEntriesPerPage(Number(e.target.value))}
-                className="border rounded px-2 py-1 text-sm w-16"
-              >
-                <option value={10}>10</option>
-                <option value={25}>25</option>
-                <option value={50}>50</option>
-              </select>
-              <span className="text-sm text-gray-600">📋 Entries</span>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left p-3 font-medium">No.</th>
-                    <th className="text-left p-3 font-medium">Date/Sign InTime</th>
-                    <th className="text-left p-3 font-medium">Staff ID</th>
-                    <th className="text-left p-3 font-medium">Department</th>
-                    <th className="text-left p-3 font-medium">Activity</th>
-                    <th className="text-left p-3 font-medium">Date/Sign Out time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {logEntries.map((entry) => (
-                    <tr key={entry.no} className="border-b hover:bg-gray-50">
-                      <td className="p-3">{entry.no}</td>
-                      <td className="p-3">{entry.signInTime}</td>
-                      <td className="p-3">{entry.staffId}</td>
-                      <td className="p-3">{entry.department}</td>
-                      <td className="p-3">{entry.activity}</td>
-                      <td className="p-3">{entry.signOutTime}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="flex justify-between items-center mt-4">
-              <div className="text-sm text-gray-600">
-                Showing 1 to 5 of 5 entries
-              </div>
-              <div className="flex space-x-2">
-                <Button variant="outline" size="sm">‹‹</Button>
-                <Button variant="outline" size="sm">1</Button>
-                <Button variant="outline" size="sm">››</Button>
-              </div>
-            </div>
+    <div className="w-full h-full bg-[#fafbfc] px-0 pt-0" style={{ fontFamily: 'serif' }}>
+      <div>
+        <h1 className="text-[2rem] font-bold mb-2 mt-0 ml-0">User Log History</h1>
+        <div className="border-t border-black w-full mb-2" />
+        <div className="flex items-center mb-2">
+          <span className="text-base mr-2">Show:</span>
+          <select
+            value={entriesPerPage}
+            onChange={(e) => setEntriesPerPage(Number(e.target.value))}
+            className="border border-black rounded px-2 py-1 text-base mr-2 bg-white"
+            style={{ width: 60 }}
+          >
+            <option value={10}>10</option>
+            <option value={25}>25</option>
+            <option value={50}>50</option>
+          </select>
+          <span className="text-base flex items-center"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" className="inline-block mr-1"><rect x="4" y="6" width="16" height="12" rx="2" fill="#ededed" stroke="#222" strokeWidth="1.5"/><rect x="7" y="9" width="2" height="2" rx="1" fill="#222"/><rect x="11" y="9" width="2" height="2" rx="1" fill="#222"/><rect x="15" y="9" width="2" height="2" rx="1" fill="#222"/></svg>Entries</span>
+        </div>
+        <table className="w-full border-separate border-spacing-0 text-base" style={{ fontFamily: 'serif' }}>
+          <thead>
+            <tr>
+              <th className="font-bold text-left py-2 px-4">No.</th>
+              <th className="font-bold text-left py-2 px-4">Date/Sign InTime</th>
+              <th className="font-bold text-left py-2 px-4">Staff ID</th>
+              <th className="font-bold text-left py-2 px-4">Department</th>
+              <th className="font-bold text-left py-2 px-4">Activity</th>
+              <th className="font-bold text-left py-2 px-4">Date/Sign Out time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {logEntries.map((entry, idx) => (
+              <tr key={entry.no} className={idx % 2 === 1 ? 'bg-[#ededed]' : 'bg-[#fafbfc]'}>
+                <td className="py-2 px-4 align-middle">{entry.no}.</td>
+                <td className="py-2 px-4 align-middle">{entry.signInTime}</td>
+                <td className="py-2 px-4 align-middle">{entry.staffId}</td>
+                <td className="py-2 px-4 align-middle">{entry.department}</td>
+                <td className="py-2 px-4 align-middle">{entry.activity}</td>
+                <td className="py-2 px-4 align-middle">{entry.signOutTime}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="flex justify-between items-center mt-2">
+          <div className="text-base">Showing 1 to 5 of 5 entries</div>
+          <div className="flex items-center space-x-1">
+            <span className="text-xl">&laquo;</span>
+            <span className="text-base mx-1">1</span>
+            <span className="text-xl">&raquo;</span>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 };
