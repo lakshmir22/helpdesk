@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
-import TechSup from '/08931baadae9e9dd045c03785852646fe88be357.png';
-import OpTeam from '/0528148a71745ae11ed88791636860157b80ffb7.png';
+// Removed: import OpTeam from '/0528148a71745ae11ed88791636860157b80ffb7.png';
 
 const Dashboard = () => {
   const userRole = localStorage.getItem('userRole');
@@ -73,16 +72,7 @@ const Dashboard = () => {
               {/* Tech Support Image with specific CSS */}
               <div className="text-center">
   <div className="mb-2">
-    <img
-      src={TechSup}
-      alt="Technical Support"
-      style={{
-        width: '105px',
-        height: '153.6px',
-        objectFit: 'contain',
-        margin: '0 auto'
-      }}
-    />
+    {/* Removed TechSup image */}
   </div>
   <div className="text-2xl font-bold">3</div>
   <div className="text-sm">Technical Supports</div>
@@ -92,16 +82,7 @@ const Dashboard = () => {
               {/* Operation Team Image */}
               <div className="text-center">
                 <div className="text-2xl mb-2">
-                  <img
-                    src={OpTeam}
-                    alt="Operation Team"
-                    style={{
-        width: '105px',
-        height: '153.6px',
-        objectFit: 'contain',
-        margin: '0 auto'
-      }}
-                  />
+                  {/* Removed OpTeam image */}
                 </div>
                 <div className="text-2xl font-bold">4</div>
                 <div className="text-sm">Operation Team</div>
