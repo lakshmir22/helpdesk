@@ -53,12 +53,12 @@ const renderStars = (rate: number) => {
   const stars = [];
   for (let i = 1; i <= 5; i++) {
     if (rate >= i) {
-      stars.push(<span key={i} style={{ color: '#FFD600', fontSize: 20 }}>★</span>);
+      stars.push(<span key={i} style={{ color: '#C9A100', fontSize: 20 }}>★</span>);
     } else if (rate > i - 1 && rate < i) {
-      stars.push(<span key={i} style={{ color: '#FFD600', fontSize: 20 }}>☆</span>);
+      stars.push(<span key={i} style={{ color: '#C9A100', fontSize: 20 }}>☆</span>);
     } else {
-      stars.push(<span key={i} style={{ color: '#C4C4C4', fontSize: 20 }}>★</span>);
-    }
+      stars.push(<span key={i} style={{ color: '#888888', fontSize: 20 }}>★</span>);
+    } 
   }
   return stars;
 };

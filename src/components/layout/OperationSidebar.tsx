@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 
 const menuItems = [
   { icon: <img src="/image.png" alt="Dashboard" className="w-6 h-6" />, label: 'Dashboard', path: '/dashboard' },
-  { icon: <img src="/tkt.png" alt="My Ticket" className="w-6 h-6" />, label: 'My Ticket', path: '/my-tickets' },
   {
     icon: (
       <svg width="33" height="22" viewBox="0 0 33 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,6 +13,7 @@ const menuItems = [
     label: 'Ticket Approval',
     path: '/ticket-approval',
   },
+  { icon: <img src="/tkt.png" alt="My Ticket" className="w-6 h-6" />, label: 'My Ticket', path: '/my-tickets' },
   {
     icon: (
       <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -6,25 +6,6 @@ const barSVG = (
   </svg>
 );
 
-const operatorSVG = (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="40" cy="40" r="40" fill="#222" fillOpacity="0.05"/>
-    <circle cx="40" cy="36" r="16" fill="#222"/>
-    <rect x="20" y="56" width="40" height="12" rx="6" fill="#222"/>
-    <rect x="30" y="60" width="20" height="8" rx="4" fill="#fff"/>
-  </svg>
-);
-
-const operatorSVG2 = (
-  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="40" cy="40" r="40" fill="#222" fillOpacity="0.05"/>
-    <circle cx="40" cy="36" r="16" fill="#222"/>
-    <rect x="20" y="56" width="40" height="12" rx="6" fill="#222"/>
-    <rect x="30" y="60" width="20" height="8" rx="4" fill="#fff"/>
-    <rect x="60" y="60" width="8" height="8" rx="2" fill="#fff"/>
-  </svg>
-);
-
 const starRow = (
   <div className="flex items-center justify-center">
     <svg width="32" height="32" fill="#FFD700" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -62,12 +43,12 @@ const AdminDashboard = () => {
         <div className="flex flex-col gap-4">
           <div className="bg-[#55d6c2] rounded-none flex w-full justify-around items-center min-h-[180px]">
             <div className="flex flex-col items-center">
-              {operatorSVG}
+              <img src="/technical.png" alt="Technical Supports" className="w-20 h-20 mb-2" />
               <div className="text-xl font-bold mt-2">3</div>
               <div className="text-base">Technical Supports</div>
             </div>
             <div className="flex flex-col items-center">
-              {operatorSVG2}
+              <img src="/operation.png" alt="Operation Team" className="w-20 h-20 mb-2" />
               <div className="text-xl font-bold mt-2">4</div>
               <div className="text-base">Operation Team</div>
             </div>

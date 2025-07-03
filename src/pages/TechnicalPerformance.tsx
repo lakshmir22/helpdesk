@@ -8,12 +8,10 @@ const renderStars = (count = 5) => (
   </span>
 );
 
-const Performance = () => {
-  const userRole = localStorage.getItem('userRole');
-  const isTechnical = userRole === 'technical';
+const TechnicalPerformance = () => {
   return (
     <div className="w-full min-h-screen bg-white px-8 pt-4" style={{ fontFamily: 'serif' }}>
-      <div className="text-3xl font-normal text-left mb-6">{isTechnical ? 'Technical Support' : 'Performance'}</div>
+      <div className="text-3xl font-normal text-left mb-6">Technical Support</div>
       <div className="flex flex-row items-start justify-between">
         {/* Left Section */}
         <div className="flex flex-col" style={{ minWidth: 600 }}>
@@ -22,7 +20,7 @@ const Performance = () => {
               <svg width="80" height="80" viewBox="0 0 24 24" fill="#222"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"/></svg>
             </div>
             <div className="flex flex-col justify-start" style={{ height: '112px' }}>
-              <span className="text-2xl font-normal mb-2">{isTechnical ? 'Technical Performance Team' : 'Operation Name'}</span>
+              <span className="text-2xl font-normal mb-2">Technical Support Name</span>
               <div className="rounded-2xl bg-[#D9D9D9] px-8 py-3 text-lg flex items-center" style={{ minWidth: 340, height: '72px' }}>
                 <div>
                   Contact No: 0123456789<br />Department: ABC
@@ -61,7 +59,7 @@ const Performance = () => {
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="#222"><circle cx="12" cy="8" r="4"/><path d="M12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"/></svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-normal mb-2">{isTechnical ? `Technical Performance Team ${i}` : `Operation Name ${i}`}</span>
+                <span className="text-xl font-normal mb-2">Technical Support Name {i}</span>
                 <button className="bg-[#55D6C2] text-black text-lg rounded-full px-8 py-2 w-fit" style={{ fontFamily: 'serif' }}>View details</button>
               </div>
             </div>
@@ -72,4 +70,4 @@ const Performance = () => {
   );
 };
 
-export default Performance;
+export default TechnicalPerformance; 

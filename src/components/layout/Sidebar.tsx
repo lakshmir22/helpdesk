@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 
 const menuItems = [
   { icon: '/image.png', label: 'Dashboard', path: '/dashboard' },
-  { icon: '/tkt.png', label: 'My Ticket', path: '/my-tickets' },
   { icon: 'new_tkt.png', label: 'New Ticket', path: '/new-ticket' },
+  { icon: '/tkt.png', label: 'My Ticket', path: '/my-tickets' },
 ];
 
 const Sidebar = () => {

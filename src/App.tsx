@@ -21,6 +21,7 @@ import AdminUserLog from "./pages/admin/AdminUserLog";
 import AdminProfile from "./pages/admin/AdminProfile";
 import NotFound from "./pages/NotFound";
 import OperationMyTickets from "./pages/OperationMyTickets";
+import TechnicalPerformance from "./pages/TechnicalPerformance";
 
 const queryClient = new QueryClient();
 
@@ -44,7 +45,7 @@ const App = () => (
             </ProtectedRoute>
           }>
             <Route path="dashboard" element={
-              (localStorage.getItem('userRole') === 'operation' || localStorage.getItem('userRole') === 'admin')
+              (["operation", "admin", "technical"].includes(localStorage.getItem('userRole')))
                 ? <AdminDashboard />
                 : <UserDashboard />
             } />
@@ -62,6 +63,7 @@ const App = () => (
             <Route path="admin-settings" element={<AdminSettings />} />
             <Route path="admin-user-log" element={<AdminUserLog />} />
             <Route path="admin-profile" element={<AdminProfile />} />
+            <Route path="technical-performance" element={<TechnicalPerformance />} />
           </Route>
           
           {/* Catch-all route */}
