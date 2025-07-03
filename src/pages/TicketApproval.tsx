@@ -30,21 +30,21 @@ const TicketApproval = () => {
       </div>
       <div className="flex items-center mb-2">
         <span className="text-lg mr-2">Show:</span>
-        <select
+            <select 
           className="border border-gray-500 bg-[#C4C4C4] text-lg px-2 py-1 mr-2"
           value={entries}
           onChange={e => setEntries(Number(e.target.value))}
           style={{ width: 60 }}
-        >
-          <option value={10}>10</option>
-          <option value={25}>25</option>
-          <option value={50}>50</option>
-        </select>
+            >
+              <option value={10}>10</option>
+              <option value={25}>25</option>
+              <option value={50}>50</option>
+            </select>
         <span className="text-lg">Entries</span>
-      </div>
-      <div className="overflow-x-auto">
+          </div>
+          <div className="overflow-x-auto">
         <table className="w-full mt-2" style={{ borderCollapse: 'collapse' }}>
-          <thead>
+              <thead>
             <tr style={{ background: 'transparent' }}>
               <th className="text-left py-2 px-2 font-normal text-lg">Ticket No.</th>
               <th className="text-left py-2 px-2 font-normal text-lg">Subject</th>
@@ -53,11 +53,11 @@ const TicketApproval = () => {
               <th className="text-left py-2 px-2 font-normal text-lg">Date</th>
               <th className="text-left py-2 px-2 font-normal text-lg">Action</th>
               <th className="text-left py-2 px-2 font-normal text-lg">Assign to</th>
-            </tr>
-          </thead>
-          <tbody>
+                </tr>
+              </thead>
+              <tbody>
             {tickets.map((t, i) => (
-              <tr key={t.id} style={{ background: i % 2 === 1 ? '#C4C4C4' : '#F3F3F3' }}>
+              <tr key={t.id} style={{ background: i % 2 === 1 ? '#C4C4C4' : '#D3D3D3' }}>
                 <td className="py-2 px-2 underline text-lg cursor-pointer">{t.id}</td>
                 <td className="py-2 px-2 text-lg">{t.subject}</td>
                 <td className="py-2 px-2 text-lg">{t.category}</td>
@@ -71,28 +71,28 @@ const TicketApproval = () => {
                     <span className="inline-block align-middle">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                     </span>
-                  </div>
-                </td>
+                      </div>
+                    </td>
                 <td className="py-2 px-2">
                   <div className="flex items-center">
                     <div className="bg-[#C4C4C4] w-16 h-8 flex items-center justify-end pr-2 rounded">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
                   </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="flex justify-between items-center mt-4">
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="flex justify-between items-center mt-4">
         <span className="text-lg">Showing 1 to 5 of 5 entries</span>
         <div className="flex items-center space-x-2 text-lg">
           <span className="mr-1">&laquo;</span>
           <span>1</span>
           <span className="ml-1">&raquo;</span>
-        </div>
-      </div>
+            </div>
+          </div>
     </div>
   );
 };

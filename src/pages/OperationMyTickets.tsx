@@ -152,22 +152,27 @@ const OperationMyTickets = () => {
       </div>
       {/* Ticket Details Modal */}
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent style={{ width: 751, height: 600, border: '1px solid #2196F3', fontFamily: 'serif' }} className="p-6">
-          <div className="text-3xl font-normal text-center mb-6">Ticket Details</div>
-          <div className="text-lg mb-2">Ticket No: {selectedTicket?.no}</div>
-          <div className="text-lg mb-2">Date:</div>
-          <div className="text-lg mb-2">Name:</div>
-          <div className="text-lg mb-2">Dept:</div>
-          <div className="text-lg mb-2">Title:</div>
-          <div className="text-lg mb-2">Description:</div>
-          <div className="text-lg mb-2">Category:</div>
-          <div className="text-lg mb-2">Type:</div>
-          <div className="text-lg mb-2">Priority:</div>
-          <div className="text-lg mb-2">Status:</div>
-          <div className="text-lg mb-6">Attachment:</div>
-          <div className="flex justify-center gap-8 mt-8">
-            <button className="bg-[#8C9EFF] text-black text-lg rounded-md px-8 py-2" style={{ fontFamily: 'serif' }}>Update</button>
-            <button className="bg-[#4CAF50] text-black text-lg rounded-md px-8 py-2" style={{ fontFamily: 'serif' }} onClick={() => setShowDetails(false)}>Close</button>
+        <DialogContent 
+          style={{ width: 480, height: 430, border: '1px solid', fontFamily: 'serif', padding: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
+          className="bg-white">
+          <div className="text-2xl font-normal text-center mb-4 mt-4">Ticket Details</div>
+          <div className="w-full px-8 text-base font-normal" style={{ fontFamily: 'Sanchez, serif', fontWeight: 525, fontSize: 15}}>
+            <div className="mb-0.5 flex"><span>Ticket No:</span><span className="ml-2">{selectedTicket?.no}</span></div>
+            <div className="mb-0.5">Date:</div>
+            <div className="mb-0.5">Name:</div>
+            <div className="mb-0.5">Dept:</div>
+            <div className="my-2"></div>
+            <div className="mb-0.5">Title:</div>
+            <div className="mb-0.5">Description:</div>
+            <div className="mb-0.5">Category:</div>
+            <div className="mb-0.5">Type:</div>
+            <div className="mb-0.5">Priority:</div>
+            <div className="mb-0.5">Status:</div>
+            <div className="mb-0.5">Attachment:</div>
+          </div>
+          <div className="flex justify-center gap-8 mt-auto mb-4 w-full px-8">
+            <button className="bg-[#8C9EFF] text-black text-base rounded-md px-8 py-2 w-36" style={{ fontFamily: 'serif' }}>Update</button>
+            <button className="bg-[#4CAF50] text-black text-base rounded-md px-8 py-2 w-36" style={{ fontFamily: 'serif' }} onClick={() => setShowDetails(false)}>Close</button>
           </div>
         </DialogContent>
       </Dialog>

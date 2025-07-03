@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SignIn from "./pages/auth/SignIn";
 import SignUp from "./pages/auth/SignUp";
 import ForgotPassword from "./pages/auth/ForgotPassword";
-import Dashboard, { UserDashboard } from "./pages/Dashboard";
+import { UserDashboard } from "./pages/Dashboard";
 import MyTickets from "./pages/MyTickets";
 import NewTicket from "./pages/NewTicket";
 import Profile from "./pages/Profile";
@@ -44,15 +44,15 @@ const App = () => (
             </ProtectedRoute>
           }>
             <Route path="dashboard" element={
-              localStorage.getItem('userRole') === 'user'
-                ? <UserDashboard />
-                : (["operation", "admin", "technical"].includes(localStorage.getItem('userRole') || ""))
-                  ? <AdminDashboard />
-                  : <Dashboard />
+              (localStorage.getItem('userRole') === 'operation' || localStorage.getItem('userRole') === 'admin')
+                ? <AdminDashboard />
+                : <UserDashboard />
             } />
             <Route path="ticket-approval" element={<TicketApproval />} />
             <Route path="my-tickets" element={
-              localStorage.getItem('userRole') === 'operation' ? <OperationMyTickets /> : <MyTickets />
+              (localStorage.getItem('userRole') === 'operation' || localStorage.getItem('userRole') === 'technical')
+                ? <OperationMyTickets />
+                : <MyTickets />
             } />
             <Route path="new-ticket" element={<NewTicket />} />
             <Route path="performance" element={<Performance />} />

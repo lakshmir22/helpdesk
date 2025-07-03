@@ -1,6 +1,6 @@
 import React from 'react';
 
-const tickets = [
+  const tickets = [
   {
     no: '1234',
     subject: 'Login issue',
@@ -41,13 +41,13 @@ const tickets = [
     date: '3/08/21',
     rate: 0,
   },
-];
+  ];
 
 const statusStyles = {
   'In Progress': 'bg-green-500 text-white',
   'On hold': 'bg-blue-700 text-white',
   'Closed': 'bg-gray-700 text-white',
-};
+  };
 
 const renderStars = (rate: number) => {
   const stars = [];
@@ -85,21 +85,21 @@ const MyTickets = () => {
           <option>10</option>
         </select>
         <span className="text-lg">Entries</span>
-      </div>
-      {/* Table */}
-      <div className="overflow-x-auto">
+</div>
+          {/* Table */}
+          <div className="overflow-x-auto">
         <table className="w-full mt-2 text-left border-collapse" style={{ fontFamily: 'serif' }}>
           <thead>
-            <tr>
+                <tr>
               <th className="py-2 px-2 font-normal text-lg">Ticket No.</th>
               <th className="py-2 px-2 font-normal text-lg">Subject</th>
               <th className="py-2 px-2 font-normal text-lg">Status</th>
               <th className="py-2 px-2 font-normal text-lg">Support by</th>
               <th className="py-2 px-2 font-normal text-lg">Date</th>
               <th className="py-2 px-2 font-normal text-lg">Rate</th>
-            </tr>
-          </thead>
-          <tbody>
+                </tr>
+              </thead>
+              <tbody>
             {tickets.map((t, i) => (
               <tr key={t.no} style={{ background: i % 2 === 1 ? '#C4C4C4' : '#F3F3F3' }}>
                 <td className="py-2 px-2 underline text-lg cursor-pointer text-blue-700">{t.no}</td>
@@ -108,23 +108,23 @@ const MyTickets = () => {
                   <span className={`px-3 py-1 rounded-md font-semibold text-sm ${statusStyles[t.status] || ''}`} style={{ display: 'inline-block', minWidth: 80, textAlign: 'center' }}>
                     {t.status}
                   </span>
-                </td>
+                    </td>
                 <td className="py-2 px-2 text-lg">{t.support}</td>
                 <td className="py-2 px-2 text-lg">{t.date}</td>
                 <td className="py-2 px-2 text-lg">{renderStars(t.rate)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
       <div className="flex justify-between items-center mt-4">
         <span className="text-lg">Showing 1 to 5 of 5 entries</span>
         <div className="flex items-center space-x-2 text-lg">
           <span className="mr-1">&laquo;</span>
           <span>1</span>
           <span className="ml-1">&raquo;</span>
-        </div>
-      </div>
+            </div>
+          </div>
       {/* Footer */}
       <div className="w-full text-center py-2 text-xs text-black bg-[#55D6C2] rounded-b-lg mt-4" style={{ fontFamily: 'serif' }}>Footer Area</div>
     </div>
